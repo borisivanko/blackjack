@@ -28,6 +28,12 @@ const App = () => {
 
 		setHand(newHand)
 
+		if (getHandValue(newHand) === 21) {
+			setIsWin(true)
+			setIsPlaying(false)
+			setBank(bank + (bet * 2))
+			setBet(0)
+		}
 		if (getHandValue(newHand) > 21) {
 			setIsWin(false)
 			setIsPlaying(false)
