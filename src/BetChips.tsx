@@ -26,19 +26,18 @@ const BetChips = ({onClick, isPlaying, bank}: Props) => {
 		<>
 			{
 				chips.map((chip) =>
-					<Button disabled={isPlaying}
-						border='5px dashed white'
+					<Button border='5px dashed white'
 						color='white'
 						onClick={() => onClick(chip)}
 						w='60px'
 						h='60px'
-						m={{sm: '0', base:'3'}}
+						m={{sm: '0', base: '3'}}
 						borderRadius='full'
 						bg={`${chip.color}.500`}
 						_hover={{
 							bg: `${chip.color}.600`
 						}}
-						disabled={chip.value > bank}
+						disabled={chip.value > bank || isPlaying}
 					>
 						{chip.value}</Button>
 				)
